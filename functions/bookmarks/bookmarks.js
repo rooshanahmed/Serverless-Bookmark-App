@@ -20,7 +20,7 @@ const resolvers = {
   Query: {
     bookmark: async (root, args, context) => {
       const client = new faunadb.Client({
-        secret: "fnAD8ATydQACAEuPVesaa87txgiZK3NsYdERgEvy",
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       })
 
       try {
@@ -46,7 +46,7 @@ const resolvers = {
   Mutation: {
     addBookmark: async (_, { url, desc }) => {
       const client = new faunadb.Client({
-        secret: "fnAD8ATydQACAEuPVesaa87txgiZK3NsYdERgEvy",
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       })
 
       try {
